@@ -4,7 +4,7 @@ export default class Armour extends Component {
   render() {
     return (
       <div>
-        <p>Armour</p>
+        <p>I'm the armour page</p>
       </div>
     )
   }

@@ -1,17 +1,28 @@
+// import react
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+
+// import components
 import Main from './components/Main'
+import Home from './components/Home'
+import Armour from './components/Armour'
 import Weapons from './components/Weapons'
+
+// import styles/css
 import './styles/index.css';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+
+// import dependencies
+import { Router, Route, IndexRoute, Switch } from 'react-router'
+import createBrowserHistory from 'history/createBrowserHistory'
+
+const history = createBrowserHistory()
 
 ReactDOM.render(
-  <Router history={browserHistory}>
-    <Route path='/' component={App} >
-      <IndexRoute component={Main}></IndexRoute>
-      <Route path='/weapons' component={Weapons} />
-    </Route>
+  <Router history={history}>
+    <Main>
+      <Route path="/" component={Home} />
+      <Route path="/armour" component={Armour} />
+      <Route path="/weapons" component={Weapons} />
+    </Main>
   </Router>,
-  document.getElementById('root')
-);
+document.getElementById('root'));

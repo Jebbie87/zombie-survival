@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
-import '../styles/App.css'
-import Weapons from './Weapons'
+// import Weapons from './Weapons'
+import { Link } from 'react-router-dom'
 
 export default class Main extends Component {
   render() {
     return (
-      <div className='app'>
-        <h1 className='title'>
-          Zombie Apocalypse Survival Gear
+      <div>
+        <h1>
+          <Link to="/">Zombie Survival</Link>
+          <Link to="/weapons">Weapons</Link>
+          <Link to="/armour">Armour</Link>
         </h1>
-        <a href='/weapons'><Weapons /></a>
+        {this.props.children}
       </div>
     )
   }
 }
+
