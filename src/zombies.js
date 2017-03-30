@@ -9,13 +9,14 @@ import Armour from './components/Armour'
 import Weapons from './components/Weapons'
 
 // import styles/css
-import './styles/index.css';
+import './styles/App.css'
 
-// import dependencies
+// import react router dependencies
 import { Router, Route, IndexRoute, Switch } from 'react-router'
 import createBrowserHistory from 'history/createBrowserHistory'
+import { Provider } from 'react-redux'
+import store, { history } from './store'
 
-const history = createBrowserHistory()
 
 ReactDOM.render(
   <Router history={history}>

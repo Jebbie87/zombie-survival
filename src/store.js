@@ -1,35 +1,30 @@
-// import { createStore, compose } from 'redux'
-// import { syncHistoryWithStore } from 'react-router-redux'
-// import { createBrowserHistory } from 'history'
+import { createStore, compose } from 'redux'
+import { syncHistoryWithStore } from 'react-router-redux'
+import createBrowserHistory from 'history/createBrowserHistory'
 
-// // import the root reducer
-// import rootReducer from './reducers/index'
+// import the root reducer
+import rootReducer from './reducers/index'
 
-// import comments from './data/comments'
-// // import posts from './data/posts'
-
-// // create an object for the default data
-// const defaultState = {
-//   comments: comments
-// }
+// create an object for the default data
+const defaultState = {
+  armour: 'armour',
+  weapons: 'weapon',
+  misc: 'misc',
+}
 
 // const enhancers = compose(
 //   window.devToolsExtension ? window.devToolsExtension() : f => f
 // )
 
-// const store = createStore(
-//   rootReducer,
-//   defaultState,
-//   enhancers
-// )
+const store = createStore(rootReducer, defaultState)
 
-// export const history = syncHistoryWithStore(createBrowserHistory(), store)
+export const history = syncHistoryWithStore(createBrowserHistory(), store)
 
-// // if (module.hot) {
-// //   module.hot.accept('./reducers/', () => {
-// //     const nextRootReducer = require('./reducers/index').default
-// //     store.replaceReducer(nextRootReducer)
-// //   })
-// // }
+// if (module.hot) {
+//   module.hot.accept('./reducers/', () => {
+//     const nextRootReducer = require('./reducers/index').default
+//     store.replaceReducer(nextRootReducer)
+//   })
+// }
 
-// export default store
+export default store

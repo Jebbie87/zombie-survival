@@ -6,11 +6,15 @@ export default class Main extends Component {
   render() {
     return (
       <div>
-        <h1>
-          <Link to="/">Zombie Survival</Link>
-          <Link to="/weapons">Weapons</Link>
-          <Link to="/armour">Armour</Link>
-        </h1>
+        <table>
+          <tbody>
+          <tr className='zombie-links'>
+            <td><Link to='/'><h4 className='zombie-title'>Zombie Survival</h4></Link></td>
+            <td><Link to='/weapons'><h4 className='weapons-title'>Weapons</h4></Link></td>
+            <td><Link to='/armour'><h4 className='armour-title'>Armour</h4></Link></td>
+          </tr>
+          </tbody>
+        </table>
         {this.props.children}
       </div>
     )
