@@ -12,18 +12,25 @@ import Weapons from './components/Weapons'
 import './styles/App.css'
 
 // import react router dependencies
-import { Router, Route, IndexRoute, Switch } from 'react-router'
-import createBrowserHistory from 'history/createBrowserHistory'
+import { Route } from 'react-router'
+
+// import redux store provider
 import { Provider } from 'react-redux'
+
+// import react router redux dependencies
+import { ConnectedRouter, push } from 'react-router-redux'
+
+// import redux store and history from store.js
 import store, { history } from './store'
 
-
 ReactDOM.render(
-  <Router history={history}>
-    <Main>
-      <Route path="/" component={Home} />
-      <Route path="/armour" component={Armour} />
-      <Route path="/weapons" component={Weapons} />
-    </Main>
-  </Router>,
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <Main>
+        <Route path="/" component={Home} />
+        <Route path="/armour" component={Armour} />
+        <Route path="/weapons" component={Weapons} />
+      </Main>
+    </ConnectedRouter>
+  </Provider>,
 document.getElementById('root'));

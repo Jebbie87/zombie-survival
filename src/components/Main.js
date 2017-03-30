@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import Weapons from './Weapons'
 import { Link } from 'react-router-dom'
 
 export default class Main extends Component {

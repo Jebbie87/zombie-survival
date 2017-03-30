@@ -1,6 +1,6 @@
 import { createStore, compose } from 'redux'
-import { syncHistoryWithStore } from 'react-router-redux'
-import createBrowserHistory from 'history/createBrowserHistory'
+import { routerMiddleware } from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
 
 // import the root reducer
 import rootReducer from './reducers/index'
@@ -12,19 +12,26 @@ const defaultState = {
   misc: 'misc',
 }
 
-// const enhancers = compose(
-//   window.devToolsExtension ? window.devToolsExtension() : f => f
-// )
+// create browser history
+export const history = createHistory()
 
-const store = createStore(rootReducer, defaultState)
+// create middleware history
+const middleware = routerMiddleware(history)
 
-export const history = syncHistoryWithStore(createBrowserHistory(), store)
+// combines the middleware and the chrome dev tools extension
+const enhancers = compose(
+  middleware(history),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+)
 
-// if (module.hot) {
-//   module.hot.accept('./reducers/', () => {
-//     const nextRootReducer = require('./reducers/index').default
-//     store.replaceReducer(nextRootReducer)
-//   })
-// }
+// create store
+const store = createStore(rootReducer, defaultState, enhancers)
+
+if (module.hot) {
+  module.hot.accept('./reducers/', () => {
+    const nextRootReducer = require('./reducers/index').default
+    store.replaceReducer(nextRootReducer)
+  })
+}
 
 export default store
