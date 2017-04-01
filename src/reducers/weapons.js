@@ -3,8 +3,7 @@
 // 1. the action (info about what happened)
 // 2. copy of current state
 
-function weapons(state = {}, action) {
-  // console.log(state, action)
+function weapons(state = [], action) {
   return state
 }
 

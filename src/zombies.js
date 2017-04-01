@@ -11,26 +11,22 @@ import Weapons from './components/Weapons'
 // import styles/css
 import './styles/App.css'
 
-// import react router dependencies
-import { Route } from 'react-router'
-
 // import redux store provider
 import { Provider } from 'react-redux'
-
-// import react router redux dependencies
-import { ConnectedRouter, push } from 'react-router-redux'
 
 // import redux store and history from store.js
 import store, { history } from './store'
 
+// import react route dependecies
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}>
+    <Router history={history}>
       <Main>
         <Route path="/" component={Home} />
         <Route path="/armour" component={Armour} />
-        <Route path="/weapons" component={Weapons} />
       </Main>
-    </ConnectedRouter>
+    </Router>
   </Provider>,
 document.getElementById('root'));

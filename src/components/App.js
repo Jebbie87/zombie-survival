@@ -1,12 +1,14 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import * as actionCreators from '../actions/actionCreators'
 import Main from './Main'
 
 function mapStateToProps(state) {
   return {
-    posts: state.posts,
-    comments: state.comments,
+    weapons: state.weapons,
+    armour: state.armour,
+    misc: state.misc,
   }
 }
 
@@ -14,6 +16,6 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(actionCreators, dispatch)
 }
 
-const App = connect(mapStateToProps, mapDispatchToProps)(Main)
+const App = withRouter(connect(mapStateToProps, mapDispatchToProps)(Main))
 
 export default App
