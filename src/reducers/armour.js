@@ -1,5 +1,4 @@
-function armour(state = {}, action) {
-  // console.log(state, action)
+function armour(state = [], action) {
   return state
 }
 

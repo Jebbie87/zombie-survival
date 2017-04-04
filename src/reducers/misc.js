@@ -1,5 +1,4 @@
-function misc(state = {}, action) {
-  // console.log(state, action)
+function misc(state = [], action) {
   return state
 }
 

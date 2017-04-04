@@ -4,7 +4,7 @@ export default class Misc extends Component {
   render() {
     return (
       <div>
-        <p>I'm the misc< page/p>
+        <p>I'm the misc page</p>
       </div>
     )
   }

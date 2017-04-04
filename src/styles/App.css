@@ -13,6 +13,6 @@
   padding-top: 20px;
 }
 
-.zombie-title, .weapons-title, .armour-title {
+.zombie-title, .weapons-title, .armour-title, .misc-title {
   border: 5px solid red;
 }
