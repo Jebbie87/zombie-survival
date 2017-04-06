@@ -26,10 +26,12 @@ import { IndexRoute } from 'react-router'
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
+      <Main>
         <Route path='/' component={App} />
         <Route path='/armour' component={Armour} />
         <Route path='/weapons' component={Weapons} />
         <Route path='/misc' component={Misc} />
+      </Main>
     </Router>
   </Provider>,
 document.getElementById('root'));

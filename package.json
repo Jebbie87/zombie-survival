@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "node-sass": "^4.5.2",
     "react-scripts": "0.9.5"
   },
   "dependencies": {
@@ -41,6 +42,8 @@
     "start": "node devServer.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-css": "node-sass --include-path scss src/styles/scss/main.scss src/styles/css/main.css",
+    "watch-css": "node-sass -w src/styles/scss/ -o src/styles/css/"
   }
 }

@@ -5,6 +5,7 @@ export default class Main extends Component {
   render() {
     return (
       <div>
+        <h1>Zombie Title</h1>
         <table>
           <tbody>
           <tr className='zombie-links'>
@@ -15,7 +16,8 @@ export default class Main extends Component {
           </tr>
           </tbody>
         </table>
-        {React.cloneElement(this.props.children, this.props)}
+        {/*React.cloneElement(this.props.children, this.props)*/}
+        {this.props.children}
       </div>
     )
   }
