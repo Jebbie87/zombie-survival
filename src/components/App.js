@@ -5,7 +5,7 @@ import * as actionCreators from '../actions/actionCreators'
 import Main from './Main'
 
 function mapStateToProps(state) {
-  console.log(state)
+  // console.log(state)
   return {
     weapons: state.weapons,
     armour: state.armour,

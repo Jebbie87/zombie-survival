@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 export default class Main extends Component {
+  cloneChildren() {
+    let path = this.props.location.pathname
+    console.log(path)
+  }
+
   render() {
     return (
       <div>
@@ -16,6 +21,7 @@ export default class Main extends Component {
             </tr>
           </tbody>
         </table>
+        {this.clonechildren()}
         {/*React.cloneElement(this.props.children, this.props)*/}
         {this.props.children}
       </div>

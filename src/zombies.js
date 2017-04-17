@@ -9,6 +9,7 @@ import Armour from './components/Armour'
 import Weapons from './components/Weapons'
 import Misc from './components/Misc'
 import App from './components/App'
+import AppContainer from './containers/AppContainer'
 
 // import styles/css
 import './styles/App.css'
@@ -23,15 +24,25 @@ import store, { history } from './store'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { IndexRoute } from 'react-router'
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history}>
-      <Main>
-        <Route path='/' component={App} />
-        <Route path='/armour' component={Armour} />
-        <Route path='/weapons' component={Weapons} />
-        <Route path='/misc' component={Misc} />
-      </Main>
-    </Router>
-  </Provider>,
-document.getElementById('root'));
+const MOUNT_NODE = document.getElementById('root')
+
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <Router history={history}>
+//       <Main>
+//         <Route path='/' component={App} />
+//         <Route path='/armour' component={Armour} />
+//         <Route path='/weapons' component={Weapons} />
+//         <Route path='/misc' component={Misc} />
+//       </Main>
+//     </Router>
+//   </Provider>,
+// document.getElementById('root'));
+let render = () => {
+  const routes = require('./modules/index').default(store)
+
+  ReactDOM.render(
+    <AppContainer store={store} routes={routes} />,
+    MOUNT_NODE
+  )
+}
