@@ -3,7 +3,7 @@ import { routerMiddleware } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 
 // import the root reducer
-import reducers from './reducers'
+import rootReducer from './reducers'
 
 // import dummy data
 import weapons from './data/weapons'
@@ -30,7 +30,11 @@ const enhancers = compose(
 )
 
 // create store
-const store = createStore(reducers, defaultState, enhancers)
+const store = createStore(
+  rootReducer,
+  defaultState,
+  enhancers
+)
 
 if (module.hot) {
   module.hot.accept('./reducers/', () => {

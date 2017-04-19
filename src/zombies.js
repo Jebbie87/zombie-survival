@@ -20,18 +20,20 @@ import { Provider } from 'react-redux'
 import store, { history } from './store'
 
 // import react route dependecies
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { IndexRoute } from 'react-router'
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Main>
-        <Route path='/' component={App} />
-        <Route path='/armour' component={Armour} />
-        <Route path='/weapons' component={Weapons} />
-        <Route path='/misc' component={Misc} />
-      </Main>
+      <App>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/armour' component={Armour} />
+          <Route path='/weapons' component={Weapons} />
+          <Route path='/misc' component={Misc} />
+        </Switch>
+      </App>
     </Router>
   </Provider>,
 document.getElementById('root'));

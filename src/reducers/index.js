@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
   armour,
   weapons,
   misc,
-  routing: routerReducer
+  router: routerReducer
 })
 
 export default rootReducer
