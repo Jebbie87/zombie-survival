@@ -29,6 +29,7 @@ ReactDOM.render(
       <App>
         <Switch>
           <Route exact path='/' component={Home} />
+          <IndexRoute component={Main} />
           <Route path='/armour' component={Armour} />
           <Route path='/weapons' component={Weapons} />
           <Route path='/misc' component={Misc} />

@@ -16,8 +16,8 @@ export default class Main extends Component {
           </tr>
           </tbody>
         </table>
-        {/*React.cloneElement(this.props.children, this.props)*/}
-        {this.props.children}
+        {React.cloneElement(this.props.children, this.props)}
+        {/*this.props.children*/}
       </div>
     )
   }

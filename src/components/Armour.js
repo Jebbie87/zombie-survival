@@ -5,6 +5,7 @@ export default class Armour extends Component {
     return (
       <div>
         <p>I'm the armour page</p>
+        {console.log(this.props)}
       </div>
     )
   }
