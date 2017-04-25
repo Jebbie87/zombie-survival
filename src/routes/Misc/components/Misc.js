@@ -1,19 +1,27 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+// import PropTypes from 'prop-types'
 
-export const Misc = (props) => (
-  <div>
-    Misc page
-    {
-      props.misc.map((misc) => {
-        return <img key={misc.name} src={misc.display_src}></img>
-      })
-    }
-  </div>
-)
+export default class Misc extends Component {
+  handleClick = (e) => {
+    console.log(e.target.name)
+    this.props.imageClicked(e.target.name)
+  }
 
-Misc.propTypes = {
-
+  render() {
+    const { misc } = this.props
+    return (
+      <div>
+        <h1>Misc page</h1>
+        {Object.keys(misc).map((item) => {
+          return <img
+            key={misc[item].name}
+            name={misc[item].name}
+            src={misc[item].display_src}
+            onClick={this.handleClick}
+          />
+        })}
+      </div>
+    )
+  }
 }
 
-export default Misc

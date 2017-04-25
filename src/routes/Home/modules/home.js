@@ -3,39 +3,26 @@ import Misc from '../../../data/misc'
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const IMAGE_CLICKED = 'IMAGE_CLICKED'
 
 // ------------------------------------
 // Actions
 // ------------------------------------
 
-export const imageClicked = (image) => {
-  console.log('image', image)
-  return {
-    type: IMAGE_CLICKED,
-    payload: image
-  }
-}
-
 export const actions = {
-  imageClicked
+
 }
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [IMAGE_CLICKED]: (state, { payload }) => {
-    console.log('state', state)
-    console.log('payload', payload)
-    return state
-  }
+
 }
 
 // ------------------------------------
 // Reducer
 // ------------------------------------
-const initialState = Misc
+const initialState = {}
 export default function counterReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
 

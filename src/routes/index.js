@@ -5,14 +5,13 @@ import ArmourRoute from './Armour'
 import WeaponsRoute from './Weapons'
 import MiscRoute from './Misc'
 
-
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
 
 export const createRoutes = (store) => ({
   path        : '/',
   component   : CoreLayout,
-  indexRoute  : Home,
+  indexRoute  : Home(store),
   childRoutes : [
     ArmourRoute(store),
     WeaponsRoute(store),

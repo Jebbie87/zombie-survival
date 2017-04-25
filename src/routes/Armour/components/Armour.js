@@ -1,19 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+// import PropTypes from 'prop-types'
 
-export const Armour = (props) => (
-  <div>
-    <p>I'm the armour page</p>
-    {
-      props.armours.map((armour) => {
-        return <img key={armour.name} src={armour.display_src}></img>
-      })
-    }
-  </div>
-)
-
-Armour.propTypes = {
-
+export default class Armour extends Component {
+  render() {
+    return (
+      <div>
+        <h1>I'm the armour page</h1>
+        {
+          this.props.armours.map((armour) => {
+            return <img key={armour.name} src={armour.display_src}></img>
+          })
+        }
+      </div>
+    )
+  }
 }
-
-export default Armour
